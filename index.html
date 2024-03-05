@@ -13,67 +13,83 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #ff8c00;
+      background-color: #003300;
     }
     #calculator {
-      width: 300px;
+      height: 570px;
+      width: 380px;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
+      padding: 0;
       text-align: center;
-      background-color: black;
+      background-color:#000000;
     }
     #display {
-      width: 250px;
+      width: 360px;
       margin-bottom: 10px;
       padding: 10px;
-      font-size: 24px;
+      font-size: 70px;
       border: 1px solid #ccc;
       border-radius: 5px;
       outline: none;
       background-color: white;
     }
     .btn {
-      width: 50px;
-      height: 50px;
+      width: 80px;
+      height: 80px;
       font-size: 20px;
       margin: 5px;
       border: none;
       background-color: #f0f0f0;
-      border-radius: 5px;
+      border-radius: 50px;
       cursor: pointer;
       transition: background-color 0.3s;
     }
     .btn1 {
-      width: 50px;
-      height: 50px;
+      width: 80px;
+      height: 80px;
       font-size: 20px;
       margin: 5px;
       border: none;
       background-color: #f0f0f0;
-      border-radius: 5px;
+      border-radius: 30px;
       cursor: pointer;
       transition: background-color 0.3s;
-      background-color: grey;
+      background-color: #CCFFFF;
     }
- .btn2 {
-      width: 115px;
-      height: 50px;
+    .btn0 {
+      width: 175px;
+      height: 80px;
       font-size: 20px;
       margin: 5px;
       border: none;
       background-color: #f0f0f0;
-      border-radius: 5px;
+      border-radius: 30px;
       cursor: pointer;
       transition: background-color 0.3s;
-      background-color: blue;
+      background-color: #CCFFFF;
+    }
+    .btn3 {
+      width: 80px;
+      height: 80px;
+      font-size: 20px;
+      margin: 5px;
+      border: none;
+      background-color: #f0f0f0;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      background-color:white;
     }
     
     .btn:hover {
       background-color: yellow;
     }
     .btn2:hover {
+      background-color: red;
+    }
+    .btn0:hover {
       background-color: red;
     }
 .btn1:hover {
@@ -84,6 +100,10 @@
 <body>
   <div id="calculator">
     <input type="text" id="display" disabled><br>
+    <button class="btn1" onclick="clearDisplay()">C</button>
+    <button class="btn1" onclick="deleteLastCharacter()">del</button>
+    <button class="btn1" onclick="addToDisplay('+')">+</button>
+    <button class="btn1" onclick="addToDisplay('-')">-</button><br>
     <button class="btn" onclick="addToDisplay('7')">7</button>
     <button class="btn" onclick="addToDisplay('8')">8</button>
     <button class="btn" onclick="addToDisplay('9')">9</button>
@@ -95,13 +115,10 @@
     <button class="btn" onclick="addToDisplay('1')">1</button>
     <button class="btn" onclick="addToDisplay('2')">2</button>
     <button class="btn" onclick="addToDisplay('3')">3</button>
-    <button class="btn1" onclick="addToDisplay('-')">-</button><br>
     <button class="btn1" onclick="addToDisplay('.')">.</button>
-    <button class="btn1" onclick="addToDisplay('0')">0</button>
-    <button class="btn1" onclick="calculate()">=</button>
     <button class="btn1" onclick="addToDisplay('+')">+</button>
-    <button class="btn2" onclick="clearDisplay()">C</button>
-    <button class="btn2" onclick="deleteLastCharacter()">del</button>
+    <button class="btn3" onclick="addToDisplay('0')">0</button>
+    <button class="btn0" onclick="calculate()">=</button>
   </div>
 
   <script>
@@ -110,6 +127,7 @@
     function addToDisplay(value) {
       document.getElementById('display').value += value;
     }
+    
 
     function clearDisplay() {
       document.getElementById('display').value = '';
